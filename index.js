@@ -1,17 +1,24 @@
 const express = require("express")
 const dbConnect = require('./config/dbConfig')
 const dotenv = require('dotenv')
+const cors = require('cors')
 const authRoute = require('./Routes/authRoute')
+const productRoute = require('./Routes/productRoute')
 
-dotenv.config()
+
+
 const app = express()
-app.use(express.json())
+dotenv.config()
 
 dbConnect()
+app.use(express.json())
+app.use(cors())
+
 
 app.use('/api/user',authRoute)
-app.use('/',(req,res)=>{
-    console.log("...")
+app.use('api/product',productRoute)
+app.get('/',(req,res)=>{
+    res.json("...")
 })
 
 app.listen(4000,(req,res)=>{

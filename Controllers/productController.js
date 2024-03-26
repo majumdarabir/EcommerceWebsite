@@ -1,6 +1,8 @@
+const productModel = require('../Models/productModel')
 const Product = require('../Models/productModel')
+
 const getAllProducts =async(req,res)=>{
-    const products = await Product.find()
+    const products = await Product.find().sort('-createdAt')
     if(products){
         res.json(products)
     }
@@ -9,22 +11,23 @@ const getAllProducts =async(req,res)=>{
     }
 }
 
-const postProduct=async()=>{
-    const {  course_name,course_desc, course_pic } = req.body;
-    if (!course_name || !course_desc || ! course_pic) {
-        return res.status(422).json({ error: "Please add all the fields" })
+const postProduct=async(req,res)=>{
+    try{
+       const {coursename,coursedesc,coursepic}= req.body
+        const product = new Product({
+            course_name:coursename,
+            course_desc:coursedesc,
+            course_pic:coursepic
+        })
+        await product.save()
+        res.status(201).json('course created')
+
     }
-    console.log(req.user)
-    
-    const product = new Product({
-        course_name :course_name,
-        course_desc : course_desc,
-        course_pic:course_pic,
-        postedBy: req.user
-    })
-    Post.save().then((result) => {
-        return res.json({ post: result })
-    }).catch(err => console.log(err))
+    catch(error){
+        res.status(500).json(error)
+        console.log(error)
+    }
+    console.log(req.body)
 }
 
 module.exports = {getAllProducts,postProduct}

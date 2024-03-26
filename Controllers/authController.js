@@ -18,7 +18,7 @@ const createUser = async (req, res) => {
 //login user
 const loginUser =asyncHandler(async(req,res)=>{
     const {email,password} = req.body
-    const existUser =await User.findOne({email})
+    const existUser = await User.findOne({email})
     if (existUser && await existUser.isPasswordMatched(password)){
         res.json({
             _id:existUser?._id,
@@ -28,7 +28,7 @@ const loginUser =asyncHandler(async(req,res)=>{
         })
     }
     else{
-        res.json("credential mismatch!")
+        res.status(500).json("credential mismatch!")
     }
 })
 

@@ -4,6 +4,7 @@ const dotenv = require('dotenv')
 const cors = require('cors')
 const authRoute = require('./Routes/authRoute')
 const productRoute = require('./Routes/productRoute')
+const bodyParser = require("body-parser")
 
 
 
@@ -13,10 +14,13 @@ dotenv.config()
 dbConnect()
 app.use(express.json())
 app.use(cors())
-
-
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+app.get('/cors', (req, res) => {
+    res.send('This has CORS enabled 🎈')
+})
 app.use('/api/user',authRoute)
-app.use('api/product',productRoute)
+app.use('/api/product',productRoute)
 app.get('/',(req,res)=>{
     res.json("...")
 })

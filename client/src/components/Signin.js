@@ -12,30 +12,37 @@ export default function Signin() {
     const [password,setPassword]= useState()
     const [confirmpassword,setConfirmpassword]= useState()
     // const { setUserLogin } = useContext(LoginContext)
-    const postData = () => {
-        fetch('http://localhost:4000/api/user/login', {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                email: email,
-                password: password
-            })
-        }).then((res) => res.json()).then((data) => {
-            if (data.error) {
-                console.log(data.error);
-            }
-            else {
-                localStorage.setItem("jwt", data.token)
-                localStorage.setItem("user", JSON.stringify(data.user))
+    const postData = async () => {
+        try {
+            const response = await fetch('http://localhost:4000/api/user/login', {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            });
 
-                // setUserLogin(true)
-                navigate('/')
+            const data = await response.json();
 
+            if (response.ok) {
+                localStorage.setItem("jwt", data.token);
+                localStorage.setItem("user", JSON.stringify(data.username));
+                console.log("Login successful");
+                // setUserLogin(true);
+                navigate('/');
+            } else {
+                console.log(data.error || "Failed to login");
+                // Handle error state or show error message to the user
             }
-        })
-    }
+        } catch (error) {
+            console.error("An error occurred:", error);
+            // Handle unexpected errors, show error message, or log them for debugging
+        }
+    };
+
   return (
           <div className="bg-grey-lighter min-h-screen flex flex-col">
               <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
@@ -51,7 +58,7 @@ export default function Signin() {
                           type="email"
                           className="block border border-grey-light w-full p-3 rounded mb-4"
                           name="email"
-                          placeholder="Email" value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                          placeholder="Email" value={email} onChange={(e) =>  setEmail(e.target.value)} />
 
                       <input
                           type="password"

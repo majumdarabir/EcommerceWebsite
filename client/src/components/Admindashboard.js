@@ -1,15 +1,15 @@
 import React from 'react'
 import "./css/Createpost.css"
-import { useState ,useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
 
 export default function Admindashboard() {
-    const[coursename,setCoursename] = useState("")
-    const [coursedesc,setCoursedesc] = useState("")
+    const [coursename, setCoursename] = useState("")
+    const [coursedesc, setCoursedesc] = useState("")
     const [image, setImage] = useState("")
-    const [url,setUrl] = useState()
+    const [url, setUrl] = useState()
     const navigate = useNavigate()
     useEffect(() => {
 
@@ -20,17 +20,17 @@ export default function Admindashboard() {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": "Bearer " + localStorage.getItem("jwt")
+                    "Authorization": "Bearer" + localStorage.getItem("jwt")
                 },
                 body: JSON.stringify({
-                    coursename:coursename,
-                    coursedesc:coursedesc,
+                    coursename: coursename,
+                    coursedesc: coursedesc,
                     coursepic: url
                 })
             }).then(res => res.json())
                 .then(data => {
                     if (data.error) {
-                        console.log(data.error)
+                        console.log("data.error")
                     } else {
                         console.log("Successfully Posted")
                         navigate("/")
@@ -41,38 +41,38 @@ export default function Admindashboard() {
 
     }, [url])
 
-        const handleApi = async(e) => {
-            // console.log(image)
-            const data =  new FormData()
-            // data.append('coursename', coursename)
-            // data.append('coursedesc', coursedesc)
-            // console.log(data)
-            // await axios.post('http://localhost:4000/api/product/post_product',data,{
-            //     headers:{
-            //         'Content-Type': 'multipart/form-data'
-            //     }
-            // }).then((res)=>{
-            //     console.log(res.data)
-            // }).catch((err)=>{
-            //     console.log(err)
-            // })
-            data.append("file", image)
-            data.append("api_key", '369424369157965');
-            data.append("api_secret", 'LNZwQID1278Kgx0uTl2vk1T1-dg');
-            data.append("upload_preset", "instraclone")
-            data.append("cloud_name", "abirKing")
+    const handleApi = async (e) => {
+        // console.log(image)
+        const data = new FormData()
+        // data.append('coursename', coursename)
+        // data.append('coursedesc', coursedesc)
+        // console.log(data)
+        // await axios.post('http://localhost:4000/api/product/post_product',data,{
+        //     headers:{
+        //         'Content-Type': 'multipart/form-data'
+        //     }
+        // }).then((res)=>{
+        //     console.log(res.data)
+        // }).catch((err)=>{
+        //     console.log(err)
+        // })
+        data.append("file", image)
+        data.append("api_key", '369424369157965');
+        data.append("api_secret", 'LNZwQID1278Kgx0uTl2vk1T1-dg');
+        data.append("upload_preset", "instraclone")
+        data.append("cloud_name", "abirKing")
 
-            console.log(image)
-            const result=await fetch("https://api.cloudinary.com/v1_1/abirKing/image/upload", {
-                method: "post",
-                body: data
-            }).then(res => res.json())
-                .then(data => setUrl(data.url))
-                .catch(err => console.log(err))
-            
-            console.log(url)
-            
-        }
+        console.log(image)
+        const result = await fetch("https://api.cloudinary.com/v1_1/abirKing/image/upload", {
+            method: "post",
+            body: data
+        }).then(res => res.json())
+            .then(data => setUrl(data.url))
+            .catch(err => console.log(err))
+
+        console.log(url)
+
+    }
     const loadfile = (event) => {
         var output = document.getElementById("output");
         output.src = URL.createObjectURL(event.target.files[0]);
@@ -96,7 +96,7 @@ export default function Admindashboard() {
                         type="text"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
                         name="email"
-                        placeholder="Course name" value={coursename} onChange={(e) =>  setCoursename(e.target.value) }/>
+                        placeholder="Course name" value={coursename} onChange={(e) => setCoursename(e.target.value)} />
 
                     <input
                         type="text"
@@ -108,19 +108,19 @@ export default function Admindashboard() {
                         src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png"
                     />
                     <input
-                             type="file"
-                            accept="image/*"
-                                
-                              onChange={(e)=>{
-                                  loadfile(e)
-                                setImage(e.target.files[0])
-                            }}
+                        type="file"
+                        accept="image/*"
+
+                        onChange={(e) => {
+                            loadfile(e)
+                            setImage(e.target.files[0])
+                        }}
                     />
 
                     <button
                         type="submit"
                         className="w-full text-center py-3 rounded bg-lime-400 text-white hover:bg-green-dark focus:outline-none my-1"
-                        onClick={()=>{handleApi()}}>Login Account</button>
+                        onClick={() => { handleApi() }}>Login Account</button>
 
                     {/* <div className="text-center text-sm text-grey-dark mt-4">
                         By signing up, you agree to the
@@ -141,5 +141,6 @@ export default function Admindashboard() {
                 </div> */}
             </div>
         </div>
-       
-)}
+
+    )
+}

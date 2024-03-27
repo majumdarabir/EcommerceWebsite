@@ -14,9 +14,9 @@ export default function Home() {
 
     //   // Fetching all posts
     fetch("http://localhost:4000/api/product/all_products", {
-      // headers: {
-      //   Authorization: "Bearer " + localStorage.getItem("jwt"),
-      // },
+      headers: {
+        Authorization: "Bearer" + localStorage.getItem("jwt"),
+      },
     })
       .then((res) => res.json())
       .then((result) => {

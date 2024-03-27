@@ -5,7 +5,7 @@ const cors = require('cors')
 const authRoute = require('./Routes/authRoute')
 const productRoute = require('./Routes/productRoute')
 const bodyParser = require("body-parser")
-
+const pdfRoute = require("./Routes/pdfRoute")
 
 
 const app = express()
@@ -21,6 +21,7 @@ app.get('/cors', (req, res) => {
 })
 app.use('/api/user',authRoute)
 app.use('/api/product',productRoute)
+app.use('/api',pdfRoute)
 app.get('/',(req,res)=>{
     res.json("...")
 })

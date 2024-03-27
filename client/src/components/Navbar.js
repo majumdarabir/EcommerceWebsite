@@ -18,16 +18,21 @@ export default function () {
                     </a>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12 flex-auto">
-                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Features
+                    <a href="/" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Books
                         {/* <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transition-all duration-500 ease-in-out transform origin-left scale-x-0"></span> */}
                     </a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Features</a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Marketplace</a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Company</a>
+                    <a href="/mycourses" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">My Courses
+                        {/* <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transition-all duration-500 ease-in-out transform origin-left scale-x-0"></span> */}
+                    </a>
+                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Notes</a>
+                    <a href="/contact" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Contact me</a>
+                    <a href="/about" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">About Me</a>
+                    <a href="/dashboardpanel" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Add items</a>
                 </div>
                 <div class="py-6">
                     <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={()=>{logoutHandler()}}>Log out</a>
                 </div>
+                
             </div>
         </div>
     )

@@ -3,14 +3,27 @@ const asyncHandler = require('express-async-handler')
 const genarateToken = require('../config/jwtToken')
 //creating user
 const createUser = async (req, res) => {
-    const email = req.body.email
-    const existUser = await User.findOne({email})
-    if (!existUser) {
-        const newUser = User.create(req.body);
-        res.status(200).json("user created")
 
-    } else {
-        res.json("user already exist")
+    const existingUsers = await User.find();
+    if(existingUsers.length ===0){
+        const newUser = User.create({
+            username:req.body.username,
+            email:req.body.email,
+            password:req.body.password,
+            role:'admin'
+        })
+        res.status(200).json("user created")
+    }
+    else{
+        const email = req.body.email
+        const existUser = await User.findOne({ email })
+        if (!existUser) {
+            const newUser = User.create(req.body);
+            res.status(200).json("user created")
+
+        } else {
+            res.json("user already exist")
+        }
     }
     
 }
@@ -65,5 +78,12 @@ const deleteUserById = asyncHandler(async(req,res)=>{
         res.status(400).json("user not found")
     }
 })
+const isAdmin=(req,res)=>{
+    if (req.user && req.user.role === 'admin') {
+        res.status(201).json("Admin")
+    } else {
+        res.status(500).json("not Admin")
+    }
+}
 
-module.exports = {createUser,loginUser,getAllUsers,getUserById,deleteUserById}
+module.exports = {createUser,loginUser,getAllUsers,getUserById,deleteUserById,isAdmin}

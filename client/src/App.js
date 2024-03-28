@@ -19,19 +19,19 @@ function App() {
     <BrowserRouter>
       {/* <Navbar login={loginComponent} /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path='/dashboard' element={<Admindashboard />} />
-        <Route path='/createnote' element={<Createnotes />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/coursedashboard' element={<Coursedashboard />} />
-        <Route path='/dashboardpanel' element={<Dashboardpanel />} />
-        <Route path='/mycourses' element={<Mycourses />} />
-        <Route path='/uploadpdf' element={<Pdfuploader />} />
-        <Route path='/notes' element={<Notedashboard />} />
-        <Route path='/updateuser' element={<Updateuser />} />
+        <Route path="/https://main--glistening-douhua-811bf4.netlify.app/" element={<Home />} />
+        <Route path="/https://main--glistening-douhua-811bf4.netlify.app/signup" element={<Signup />} />
+        <Route path="/https://main--glistening-douhua-811bf4.netlify.app/signin" element={<Signin />} />
+        <Route path='/https://main--glistening-douhua-811bf4.netlify.app/dashboard' element={<Admindashboard />} />
+        <Route path='/https://main--glistening-douhua-811bf4.netlify.app/createnote' element={<Createnotes />} />
+        <Route path='/https://main--glistening-douhua-811bf4.netlify.app/about' element={<About />} />
+        <Route path='/https://main--glistening-douhua-811bf4.netlify.app/contact' element={<Contact />} />
+        <Route path='/https://main--glistening-douhua-811bf4.netlify.app/coursedashboard' element={<Coursedashboard />} />
+        <Route path='/https://main--glistening-douhua-811bf4.netlify.app/dashboardpanel' element={<Dashboardpanel />} />
+        <Route path='/https://main--glistening-douhua-811bf4.netlify.app/mycourses' element={<Mycourses />} />
+        <Route path='/https://main--glistening-douhua-811bf4.netlify.app/uploadpdf' element={<Pdfuploader />} />
+        <Route path='/https://main--glistening-douhua-811bf4.netlify.app/notes' element={<Notedashboard />} />
+        <Route path='/https://main--glistening-douhua-811bf4.netlify.app/updateuser' element={<Updateuser />} />
         {/* <Route path="/signup" element={<Signup />} />
           // <Route path="/signin" element={<Signin />} />
           <Route path="/createpost" element={<Createpost />} />

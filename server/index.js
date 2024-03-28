@@ -19,7 +19,7 @@ dbConnect()
 
 app.use(express.json())
 app.use(cors())
-app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.get('/cors', (req, res) => {
     res.send('This has CORS enabled 🎈')
@@ -58,13 +58,14 @@ app.get('/api/pdf/:filename', (req, res) => {
 });
 
 app.use('/pdfs', express.static(pdfDir))
-app.use('/api/user',authRoute)
-app.use('/api/product',productRoute)
-app.use('/api',pdfRoute)
-app.get('/',(req,res)=>{
+app.use('/api/user', authRoute)
+app.use('/api/product', productRoute)
+app.use('/api', pdfRoute)
+app.get('/', (req, res) => {
     res.json("...")
 })
 
-app.listen(4000,(req,res)=>{
+const PORT = process.env.PORT || 4000
+app.listen(PORT, (req, res) => {
     console.log("server is running 4000");
 })

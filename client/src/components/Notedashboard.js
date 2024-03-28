@@ -8,7 +8,7 @@ const Notedashboard = () => {
         // Fetch PDFs directly from the '/pdfs' directory
         const fetchPDFs = async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/pdf-list');
+                const response = await fetch('https://ecommercewebsite-3.onrender.com/api/pdf-list');
                 const data = await response.json();
                 setPdfs(data);
             } catch (error) {
@@ -29,7 +29,7 @@ const Notedashboard = () => {
                             <div className="card-body">
                                 <h5 className="card-title"><b>{pdf}</b></h5>
                                 
-                                <a href={`http://localhost:4000/api/pdf/${pdf}`} className="btn btn-primary" style={{ marginTop: 5 }}>Go inside</a>
+                                <a href={`https://ecommercewebsite-3.onrender.com/api/pdf/${pdf}`} className="btn btn-primary" style={{ marginTop: 5 }}>Go inside</a>
                             </div>
                         </div>
                     ))}

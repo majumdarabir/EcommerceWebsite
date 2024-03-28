@@ -6,7 +6,7 @@ export default function Updateuser() {
     const makeAdmin=async()=>{
         console.log(email)
         try {
-            const response = await fetch('http://localhost:4000/api/user/updateuser', {
+            const response = await fetch('https://ecommercewebsite-3.onrender.com/api/user/updateuser', {
                 method: "put",
                 headers: {
                     "Content-Type": "application/json",

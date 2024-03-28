@@ -19,7 +19,7 @@ const Pdfuploader = () => {
         formData.append('pdf', selectedFile);
 
         try {
-            const response = await axios.post('http://localhost:4000/api/uploadpdf', formData, {
+            const response = await axios.post('https://ecommercewebsite-3.onrender.com/api/uploadpdf', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

@@ -16,7 +16,7 @@ export default function Admindashboard() {
         // saving post to mongodb
         if (url) {
 
-            fetch("http://localhost:4000/api/product/post_product", {
+            fetch("https://ecommercewebsite-3.onrender.com/api/product/post_product", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",
@@ -42,20 +42,7 @@ export default function Admindashboard() {
     }, [url])
 
     const handleApi = async (e) => {
-        // console.log(image)
         const data = new FormData()
-        // data.append('coursename', coursename)
-        // data.append('coursedesc', coursedesc)
-        // console.log(data)
-        // await axios.post('http://localhost:4000/api/product/post_product',data,{
-        //     headers:{
-        //         'Content-Type': 'multipart/form-data'
-        //     }
-        // }).then((res)=>{
-        //     console.log(res.data)
-        // }).catch((err)=>{
-        //     console.log(err)
-        // })
         data.append("file", image)
         data.append("api_key", '369424369157965');
         data.append("api_secret", 'LNZwQID1278Kgx0uTl2vk1T1-dg');

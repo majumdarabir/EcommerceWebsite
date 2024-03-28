@@ -13,7 +13,7 @@ export default function Home() {
     }
 
     //   // Fetching all posts
-    fetch("http://localhost:4000/api/product/all_products", {
+    fetch("https://ecommercewebsite-3.onrender.com/api/product/all_products", {
       headers: {
         Authorization: "Bearer" + localStorage.getItem("jwt"),
       },

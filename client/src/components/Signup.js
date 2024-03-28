@@ -19,7 +19,7 @@ export default function Signup() {
         }
         // Sending data to server
         console.log("hi abir")
-        fetch("http://localhost:4000/api/user/register", {
+        fetch("https://ecommercewebsite-3.onrender.com/api/user/register", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"

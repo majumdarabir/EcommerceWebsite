@@ -12,7 +12,7 @@ export default function Mycourses() {
         }
 
         //   // Fetching all posts
-        fetch("http://localhost:4000/api/product/all_items", {
+        fetch("https://ecommercewebsite-3.onrender.com/api/product/all_items", {
             headers: {
                 Authorization: "Bearer" + localStorage.getItem("jwt"),
             },

@@ -4,20 +4,8 @@ const Createnotes =()=>{
     const [file,setFile] = useState([])
     const [url,setUrl] = useState()
     const handleApi = async (e) => {
-        // console.log(image)
         const data = new FormData()
-        // data.append('coursename', coursename)
-        // data.append('coursedesc', coursedesc)
-        // console.log(data)
-        // await axios.post('http://localhost:4000/api/product/post_product',data,{
-        //     headers:{
-        //         'Content-Type': 'multipart/form-data'
-        //     }
-        // }).then((res)=>{
-        //     console.log(res.data)
-        // }).catch((err)=>{
-        //     console.log(err)
-        // })
+       
         data.append("file", file)
         data.append("api_key", '369424369157965');
         data.append("api_secret", 'LNZwQID1278Kgx0uTl2vk1T1-dg');

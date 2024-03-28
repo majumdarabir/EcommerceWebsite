@@ -8,7 +8,7 @@ export default function Coursedashboard() {
     const [link, setLink] = useState()
     const navigate = useNavigate()
     const handleSubmit = async () => {
-        fetch("http://localhost:4000/api/product/post_item", {
+        fetch("https://ecommercewebsite-3.onrender.com/api/product/post_item", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",

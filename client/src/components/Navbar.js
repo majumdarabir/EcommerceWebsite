@@ -24,7 +24,7 @@ export default function () {
                     <a href="/mycourses" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">My Courses
                         {/* <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transition-all duration-500 ease-in-out transform origin-left scale-x-0"></span> */}
                     </a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Notes</a>
+                    <a href="/notes" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Notes</a>
                     <a href="/contact" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Contact me</a>
                     <a href="/about" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">About Me</a>
                     <a href="/dashboardpanel" class="text-sm font-semibold leading-6 text-gray-900 relative hover:text-blue-500 hover:border-b-2 border-black transition duration-300">Add items</a>

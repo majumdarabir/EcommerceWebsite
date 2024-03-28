@@ -33,8 +33,8 @@ export default function Dashboardpanel() {
             {admin ? (
                 <div>
                     <Navbar />
-                    <div class="min-h-screen bg-gradient-to-b from-green-100 to-green-200 flex justify-center items-center">
-                        <div class="bg-white rounded-lg">
+                    <div class="h-screen bg-gradient-to-b  justify-center items-center">
+                        <div class=" bg-white rounded-lg" style={{ marginTop: 2 }}>
                             <div class="w-96  border-green-600 rounded-lg flex">
                                 <div class="w-1/3 pt-6 flex justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 bg-pink-600 text-white p-3 rounded-full" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -47,9 +47,11 @@ export default function Dashboardpanel() {
                                 </div>
                             </div>
 
-                            <div class="p-4 flex space-x-4">
-                                <a href="/coursedashboard" class="w-1/2 px-4 py-3 text-center bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-black font-bold rounded-lg text-sm">Add item</a>
+                            <div class="p-4 flex space-x-6">
+                                <a href="/coursedashboard" class="w-1/2 px-4 py-3 text-center bg-gray-400 text-green-100 hover:bg-gray-500 hover:text-white font-bold rounded-lg text-sm">Add item</a>
                                 <a href="/dashboard" class="w-1/2 px-4 py-3 text-center text-green-100 bg-green-600 rounded-lg hover:bg-green-700 hover:text-white font-bold text-sm">Add book</a>
+                                <a href="/uploadpdf" class="w-1/2 px-4 py-3 text-center text-green-100 bg-blue-600 rounded-lg hover:bg-blue-700 hover:text-white font-bold text-sm">Add Note</a>
+                                <a href="/updateuser" class="w-1/2 px-4 py-3 text-center text-green-100 bg-yellow-600 rounded-lg hover:bg-yellow-700 hover:text-white font-bold text-sm">Promote Admin</a>
                             </div>
                         </div>
                     </div>

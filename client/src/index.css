@@ -1,3 +1,90 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background-container {
+    background-image: url('https://wallpapers.com/images/featured/educational-background-uygkkwviq3gbhewf.jpg') !important;
+    /* Set the background image */
+    background-size: cover;
+    /* Ensure the image covers the entire container */
+    background-position: center;
+    /* Center the image */
+    min-height: 100vh;
+    /* Set a minimum height to fill the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add additional styles for content visibility */
+.background-container h1 {
+    color: white;
+    /* Set text color */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* Add text shadow for better visibility */
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    /* Adjust the opacity (last value) as needed */
+}
+
+.signup-form {
+    background-color: rgba(2, 2, 2, 0.2);
+    z-index: 2;
+}
+
+.signup-form input {
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    font-weight: bold;
+}
+.signup-form input ::placeholder {
+    color: black;
+    font-weight: bold;
+}
+.signup-btn:hover{
+    background-color:rgba(0, 0, 0, 0.865);
+}
+.signup-btn3:hover {
+    background-color: rgba(236, 35, 35, 0.865);
+}
+.background-container2 {
+    background-image: url('https://twtv3.ams3.digitaloceanspaces.com/posts/software-developer-on-php-code.jpeg') !important;
+    /* Set the background image */
+    background-size: cover;
+    /* Ensure the image covers the entire container */
+    background-position: center;
+    /* Center the image */
+    min-height: 100vh;
+    /* Set a minimum height to fill the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background-container2 h1 {
+    color: white;
+    /* Set text color */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* Add text shadow for better visibility */
+}
+
+.background-container3 {
+    background-image: url('https://www.reliancedigital.in/wp-content/uploads/2017/11/prgramming_banner.jpg') !important;
+    /* Set the background image */
+    background-size: cover;
+    /* Ensure the image covers the entire container */
+    background-position: center;
+    /* Center the image */
+    min-height: 100vh;
+    /* Set a minimum height to fill the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -22,7 +22,7 @@ const createUser = async (req, res) => {
             res.status(200).json("user created")
 
         } else {
-            res.json("user already exist")
+            res.status(500).json({'error':"user already exist"})
         }
     }
     
@@ -41,7 +41,7 @@ const loginUser =asyncHandler(async(req,res)=>{
         })
     }
     else{
-        res.status(500).json("credential mismatch!")
+        res.status(500).json({'error':"credential mismatch!"})
     }
 })
 
@@ -86,4 +86,29 @@ const isAdmin=(req,res)=>{
     }
 }
 
-module.exports = {createUser,loginUser,getAllUsers,getUserById,deleteUserById,isAdmin}
+const updateUser=asyncHandler(async(req,res)=>{
+    const { email } = req.body;
+
+    try {
+        // Find the user by email
+        const newuser = await User.findOne({ email });
+
+        if (!newuser) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        // Update user role to admin
+        newuser.role = 'admin';
+        await newuser.save();
+
+        return res.status(200).json({ message: 'User role updated to admin successfully' });
+    } catch (error) {
+        console.error('Error updating user role:', error);
+        return res.status(500).json({ error: 'Internal server error' });
+    }
+})
+
+
+
+
+module.exports = {createUser,loginUser,getAllUsers,getUserById,deleteUserById,isAdmin,updateUser}

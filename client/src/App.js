@@ -12,31 +12,34 @@ import Coursedashboard from './components/Coursedashboard';
 import Dashboardpanel from './components/Dashboardpanel';
 import Mycourses from './components/Mycourses';
 import Pdfuploader from './components/Pdfuploader';
+import Notedashboard from './components/Notedashboard';
+import Updateuser from './components/Updateuser';
 function App() {
   return (
     <BrowserRouter>
-        {/* <Navbar login={loginComponent} /> */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path='/dashboard' element={<Admindashboard/>}/>
-          <Route path='/createnote' element={<Createnotes/>}/>
+      {/* <Navbar login={loginComponent} /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path='/dashboard' element={<Admindashboard />} />
+        <Route path='/createnote' element={<Createnotes />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/coursedashboard' element={<Coursedashboard />} />
         <Route path='/dashboardpanel' element={<Dashboardpanel />} />
         <Route path='/mycourses' element={<Mycourses />} />
         <Route path='/uploadpdf' element={<Pdfuploader />} />
-
-          {/* <Route path="/signup" element={<Signup />} />
+        <Route path='/notes' element={<Notedashboard />} />
+        <Route path='/updateuser' element={<Updateuser />} />
+        {/* <Route path="/signup" element={<Signup />} />
           // <Route path="/signin" element={<Signin />} />
           <Route path="/createpost" element={<Createpost />} />
           <Route exact path="/Profile" element={<Profie />} />
           <Route path="/profile/:userid" element={<UserProfie />}></Route>
           <Route path="/followingpost" element={<MyFolliwngPost />} /> */}
-        </Routes>
-        {/* <ToastContainer />
+      </Routes>
+      {/* <ToastContainer />
 
         {modalOpen && <Modal setModalOpen={setModalOpen}></Modal>} */}
 
